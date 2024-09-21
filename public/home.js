@@ -9,6 +9,8 @@ function Home(){
           title="Welcome to the bank"
           text="Please login or create an account to utilize our services"
           body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
+          headerClass="bg-white"
+          className="card-border"
         />
       </div>
     </>
