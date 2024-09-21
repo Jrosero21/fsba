@@ -1,0 +1,17 @@
+.pageTitle {
+    color: blueviolet;
+    background-color: black;
+    text-align: center;
+  }
+  
+  .d-flex {
+    background-color: rgb(245, 236, 236);
+    border-color: blue;
+    border-width:0vmax;
+  }
+
+  /* global background color */
+  body {
+    background-color:rgb(181, 191, 201);
+  
+  }
