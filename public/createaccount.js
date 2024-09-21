@@ -11,7 +11,7 @@ return (
         body={show ? 
           <CreateForm setShow={setShow}/> : 
           <CreateMsg setShow={setShow}/>}
-        headerClass="bg-primary"
+        headerClass="bg-success"
       />
     </div>
   );
