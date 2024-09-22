@@ -1,8 +1,12 @@
+const { useHistory } = ReactRouterDOM;
+
 function NavBar() {
   const { user, setUser } = React.useContext(UserContext);
+  const history = useHistory(); // Initialize useHistory for redirection
 
   const handleLogout = () => {
     setUser(null);
+    history.push("/"); // Redirect to the home component
   };
 
   // Function to check if the user's email ends with "@bank.com"
