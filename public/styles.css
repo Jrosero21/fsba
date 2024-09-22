@@ -7,6 +7,22 @@ html, body {
   flex-direction: column;
 }
 
+/*NAVBAR */
+.custom-navbar {
+  background-color: purple !important; /* Set navbar background to purple */
+}
+
+.custom-navbar .navbar-nav .nav-link,
+.custom-navbar .navbar-text,
+.custom-navbar .navbar-brand {
+  color: white !important; /* Set navbar text to white */
+}
+
+.custom-navbar .nav-link:hover {
+  color: lightgray !important; /* Optional: Change hover color */
+}
+
+
 /* Full height for the page container */
 .page-container {
   display: flex;
@@ -65,7 +81,7 @@ html, body {
 .create-account-link {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #007bff;
+  color: purple;
   margin-left: 20px;
   align-self: center;
 }
@@ -75,7 +91,7 @@ body {
   background-color: white;
 }
 
-/* Footer styles */
+/* FOOTER */
 footer {
   width: 100%;
   display: flex;
@@ -84,7 +100,7 @@ footer {
   position: relative;
   bottom: 0;
   flex-shrink: 0;
-  background-color: #4b4747; /* Add a background color if necessary */
+  background-color: #f8f9fa; 
 }
 
 .footer__row {
@@ -108,14 +124,14 @@ footer {
 }
 
 .footer__social--link {
-  color: white;
+  color: purple;
   text-decoration: none;
   font-size: 16px;
 }
 
 .footer__contact {
   font-size: 12px;
-  color: white;
+  color: purple;
   text-align: right; /* Ensure the contact info stays on the right */
 }
 .link__hover-effect:after {
