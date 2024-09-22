@@ -6,7 +6,7 @@ function Login(){
 
   return (
     <Card
-      bgcolor="secondary"
+      bgcolor="light"
       header="Login"
       status={status}
       body={show ? 
@@ -83,7 +83,7 @@ function LoginForm(props) {
         onChange={e => setPassword(e.currentTarget.value)} /><br />
 
       <div className="d-flex justify-content-between">
-        <button type="submit" className="btn btn-light" onClick={handleLogin}>Login</button>
+        <button type="submit" className="btn" onClick={handleLogin}>Login</button>
         <button type="button" className="btn btn-primary ml-2" onClick={handleGoogleSignIn}>Sign in with Google</button>
       </div>
     </>

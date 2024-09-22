@@ -35,13 +35,18 @@ html, body {
   flex: 1; /* Make the content area grow to fill space between header and footer */
 }
 
+/* CARD */
+.btn {
+  background: purple;
+  color: white;
+}
+
 /* Ensure the card and link are horizontally aligned */
 .d-flex {
   display: flex;
   margin-right: 20px; /* Add space between card and link */
   justify-content: space-between;
   align-items: center;
-  border-color: green;
 }
 
 
