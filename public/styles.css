@@ -29,6 +29,13 @@ html, body {
   border-color: green;
 }
 
+
+.card-header-center {
+  text-align: center; /* Center the header text */
+  font-weight: bold;  /* Optional: make the header bold */
+}
+
+
 /* Center content horizontally and vertically */
 .home-container {
   display: flex;
@@ -46,7 +53,7 @@ html, body {
   color: blue;
   background-color: white;
   text-align: center;
-  margin-bottom: 20px; /* Space between title and card */
+  margin-bottom: 40px; /* Space between title and card */
 }
 
 /* Style for the card */
@@ -72,39 +79,65 @@ body {
 
 /* Footer styles */
 footer {
-  background-color: #4b4747;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
   position: relative;
   bottom: 0;
-  flex-shrink: 0; /* Prevent the footer from shrinking */
+  flex-shrink: 0;
+  background-color: #4b4747; /* Add a background color if necessary */
 }
 
 .footer__row {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Ensures the logo and social links stay apart */
   align-items: center;
-  justify-content: center;
+  width: 100%;
   padding: 2% 0;
 }
 
+.footer-logo {
+  height: 60px; /* Adjust the size as necessary */
+  margin-left: 20px; /* Optional: some space from the edge */
+}
+
 .footer__social--list {
-  width: 100%;
-  max-width: 200px;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer__social--link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .footer__contact {
   font-size: 12px;
   color: white;
+  margin-right: 20px; /* Some space from the right */
 }
 
-.card-header-center {
-  text-align: center; /* Center the header text */
-  font-weight: bold;  /* Optional: make the header bold */
+.link__hover-effect:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: -3px;
+  right: 0;
+transition: all 300ms ease;
+}
+
+.link__hover-effect--white:after {
+  background-color: white;
+}
+.link__hover-effect--black:after {
+  background-color: black;
+}
+
+.link__hover-effect:hover:after {
+  width: 100%;
+  left: 0;
 }
