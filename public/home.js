@@ -1,7 +1,6 @@
 function Home() {
   return (
     <div className="home-container">
-      <h1 className="pageTitle">Welcome to BBCU</h1>
       <div className="content">
         <Card
           txtcolor="black"
