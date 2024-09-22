@@ -91,21 +91,22 @@ footer {
 
 .footer__row {
   display: flex;
-  justify-content: space-between; /* Ensures the logo and social links stay apart */
-  align-items: center;
+  justify-content: space-between; /* Space between the logo and social links */
+  align-items: center; /* Align them in the center vertically */
   width: 100%;
-  padding: 2% 0;
+  padding: 20px 50px; /* Padding around the footer for spacing */
 }
 
-.footer-logo {
-  height: 60px; /* Adjust the size as necessary */
-  margin-left: 20px; /* Optional: some space from the edge */
+.footer__logo {
+  align-self: flex-start;
+  height: 40px; /* Adjust the size as necessary */
 }
 
 .footer__social--list {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 20px; /* Space between the social media links */
+  flex-grow: 1; /* Let the social links occupy the center area */
 }
 
 .footer__social--link {
@@ -117,9 +118,8 @@ footer {
 .footer__contact {
   font-size: 12px;
   color: white;
-  margin-right: 20px; /* Some space from the right */
+  text-align: right; /* Ensure the contact info stays on the right */
 }
-
 .link__hover-effect:after {
   content: "";
   position: absolute;
