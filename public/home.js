@@ -7,7 +7,7 @@ function Home() {
           header="BadBank Credit Union"  // This header will be centered
           title="Welcome to the bank"
           text="Please login or create an account to utilize our services"
-          body={(<img src="bank.png" className="img-fluid" alt="Responsive image" />)}
+          body={(<img src="bank1.png" className="img-fluid" alt="Responsive image" />)}
           className="card-border"
         />
         <a href="#/CreateAccount/" className="create-account-link">
