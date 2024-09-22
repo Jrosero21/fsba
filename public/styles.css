@@ -43,7 +43,7 @@ html, body {
 
 /* Style for the title */
 .pageTitle {
-  color: blueviolet;
+  color: blue;
   background-color: white;
   text-align: center;
   margin-bottom: 20px; /* Space between title and card */
