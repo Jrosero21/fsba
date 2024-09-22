@@ -1,80 +1,86 @@
-.pageTitle {
-    color: blueviolet;
-    background-color: white;
-    text-align: center;
-  }
-  
-  /* card div */
-  .d-flex {
-    background-color: white;
-    border-color: green;
-
-  }
-
-  /* global background color */
-  body {
-    background-color:white;
-  
-  }
-
-  .card-border {
-    border: 2px solid black;
-    border-radius: 5px; /* Optional for rounded corners */
-    padding: 15px; /* Optional padding */
-  }
-
-
-/* Center the title */
-.pageTitle {
-  text-align: center;
-  font-size: 2.5rem;
-  color: purple;
-  margin-bottom: 20px; /* Spacing between title and the card */
-}
-
-/* Styling for the link */
-.create-account-link {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #007bff;
-  text-align: right;
-  margin-left: 20px;
-}
-
-/* Flex container ensuring vertical centering */
-.d-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
+/* Ensure html and body take full height */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-.page-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Full height for the page container */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* The root container (where React will mount) should grow to fill available space */
 #root {
-  flex: 1;
+  flex: 1; /* Make the content area grow to fill space between header and footer */
+}
+
+/* Ensure the card and link are horizontally aligned */
+.d-flex {
+  display: flex;
+  margin-right: 20px; /* Add space between card and link */
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-color: green;
+}
+
+/* Center content horizontally and vertically */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Ensure the home container grows to fill available space */
+  padding: 20px;
+}
+
+
+
+/* Style for the title */
+.pageTitle {
+  color: blueviolet;
+  background-color: white;
+  text-align: center;
+  margin-bottom: 20px; /* Space between title and card */
+}
+
+/* Style for the card */
+.card-border {
+  border: 2px solid black;
+  border-radius: 5px; /* Optional for rounded corners */
+  padding: 15px; /* Optional padding */
+}
+
+/* Style for the link */
+.create-account-link {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-left: 20px;
+  align-self: center;
+}
+
+/* Global background color */
+body {
+  background-color: white;
 }
 
 /* Footer styles */
 footer {
   background-color: #4b4747;
   width: 100%;
-  height: 150px; /* Adjust the height as needed */
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
   position: relative;
   bottom: 0;
+  flex-shrink: 0; /* Prevent the footer from shrinking */
 }
 
 .footer__row {
