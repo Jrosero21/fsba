@@ -5,7 +5,7 @@ function CreateAccount(){
 return (
     <div className="d-flex justify-content-center align-items-center">
       <Card
-        bgcolor="primary"
+        txtcolor="black"
         header="Create Your Account"
         status={status}
         body={show ? 

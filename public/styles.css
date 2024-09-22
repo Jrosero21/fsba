@@ -9,7 +9,7 @@ html, body {
 
 /*NAVBAR */
 .custom-navbar {
-  background-color: purple !important; /* Set navbar background to purple */
+  background-color: rgb(146, 9, 243) !important; /* Set navbar background to purple */
 }
 
 .custom-navbar .navbar-nav .nav-link,
@@ -37,8 +37,19 @@ html, body {
 
 /* CARD */
 .btn {
-  background: purple;
-  color: white;
+  background: blueviolet;
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline when focused */
+}
+
+.btn:hover {
+  background: purple; /* Change the background to blue on hover */
+  color: white; /* Keep the text color white */
+}
+
+.btn:focus {
+  outline: none; /* Remove any focus outline */
+  box-shadow: none; /* Remove focus shadow */
 }
 
 /* Ensure the card and link are horizontally aligned */
@@ -86,7 +97,7 @@ html, body {
 .create-account-link {
   font-size: 1.4rem;
   font-weight: bold;
-  color: purple;
+  color: rgb(146, 9, 243);
   margin-left: 20px;
   align-self: center;
 }
@@ -129,14 +140,14 @@ footer {
 }
 
 .footer__social--link {
-  color: purple;
+  color: rgb(146, 9, 243);
   text-decoration: none;
   font-size: 16px;
 }
 
 .footer__contact {
   font-size: 12px;
-  color: purple;
+  color: rgb(146, 9, 243);
   text-align: right; /* Ensure the contact info stays on the right */
 }
 .link__hover-effect:after {
