@@ -6,12 +6,12 @@ return (
     <div className="d-flex justify-content-center align-items-center">
       <Card
         bgcolor="primary"
-        header="Create Account"
+        header="Create Your Account"
         status={status}
         body={show ? 
           <CreateForm setShow={setShow}/> : 
           <CreateMsg setShow={setShow}/>}
-        headerClass="bg-success"
+        headerClass="bg-black"
         className="card-border"
       />
     </div>
