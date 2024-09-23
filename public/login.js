@@ -5,6 +5,7 @@ function Login(){
   const [status, setStatus] = React.useState('');    
 
   return (
+    <div className="d-flex justify-content-center align-items-center">
     <Card
       bgcolor="light"
       txtcolor="black"
@@ -14,6 +15,7 @@ function Login(){
         <LoginForm setShow={setShow} setStatus={setStatus}/> :
         <LoginMsg setShow={setShow} setStatus={setStatus}/>}
     />
+    </div>
   ) 
 }
 
@@ -83,9 +85,9 @@ function LoginForm(props) {
         value={password}
         onChange={e => setPassword(e.currentTarget.value)} /><br />
 
-      <div className="d-flex justify-content-between">
+      <div className="d-flex button-container">
         <button type="submit" className="btn" onClick={handleLogin}>Login</button>
-        <button type="button" className="btn btn-primary ml-2" onClick={handleGoogleSignIn}>Sign in with Google</button>
+        <button type="button" className="btn btn-google" onClick={handleGoogleSignIn}>Google Sign in</button>
       </div>
     </>
   );

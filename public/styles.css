@@ -55,15 +55,33 @@ body {
 }
 
 /* CARD */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Space between the buttons */
+  white-space: nowrap;
+  align-items: center;
+}
+
 .btn {
+  flex: 1;
   background: blueviolet;
   color: white;
   border: none; /* Remove the border */
   outline: none; /* Remove the outline when focused */
+  padding: 10px;
 }
 
+.btn-google {
+  background-color: #4285f4; /* Specific Google sign-in button color */
+  color: white;
+}
+
+.btn-google:hover {
+  background-color: #357ae8; /* Darken Google button on hover */
+}
 .btn:hover {
-  background: purple; /* Change the background to blue on hover */
+  background: blue; /* Change the background to blue on hover */
   color: white; /* Keep the text color white */
 }
 
