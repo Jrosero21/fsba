@@ -40,6 +40,7 @@ html, body {
   background: blueviolet;
   border: none; /* Remove the border */
   outline: none; /* Remove the outline when focused */
+  color: white;
 }
 
 .btn:hover {
@@ -55,7 +56,6 @@ html, body {
 /* Ensure the card and link are horizontally aligned */
 .d-flex {
   display: flex;
-  margin-right: 20px; /* Add space between card and link */
   justify-content: space-between;
   align-items: center;
 }
@@ -69,17 +69,21 @@ html, body {
 }
 
 
-/* Center content horizontally and vertically */
 .home-container {
+  padding-top: 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  flex-grow: 1; /* Ensure the home container grows to fill available space */
-  padding: 20px;
 }
 
+.left-image {
+  max-width: 100%; /* Make the image responsive */
+  margin-bottom: 20px;
+  margin-top: 20px; /* Ensure space between the image and the navbar */
+}
 
+.content {
+  margin-left: 20px; /* Add space between the image and the card */
+}
 
 /* Style for the title */
 .pageTitle {
@@ -172,4 +176,12 @@ transition: all 300ms ease;
 .link__hover-effect:hover:after {
   width: 100%;
   left: 0;
+}
+
+@media (max-width: 768px) {
+  /* For mobile screens, stack the image and card vertically */
+  .home-container .row {
+    flex-direction: column;
+    align-items: center;
+  }
 }
