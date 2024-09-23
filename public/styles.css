@@ -9,13 +9,13 @@ html, body {
 
 /*NAVBAR */
 .custom-navbar {
-  background-color: rgb(146, 9, 243) !important; /* Set navbar background to purple */
+  background-color: #f8f9fa !important; 
 }
 
 .custom-navbar .navbar-nav .nav-link,
 .custom-navbar .navbar-text,
 .custom-navbar .navbar-brand {
-  color: white !important; /* Set navbar text to white */
+  color: rgb(146, 9, 243) !important; 
 }
 
 .custom-navbar .nav-link:hover {
@@ -38,6 +38,7 @@ html, body {
 /* CARD */
 .btn {
   background: blueviolet;
+  color: white;
   border: none; /* Remove the border */
   outline: none; /* Remove the outline when focused */
 }
@@ -63,7 +64,8 @@ html, body {
 
 .card-header-center {
   text-align: center; /* Center the header text */
-  background: black;
+  background: rgb(146, 9, 243);
+  color: white;
   font-weight: bold;  /* Optional: make the header bold */
 }
 
