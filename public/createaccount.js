@@ -3,8 +3,16 @@ function CreateAccount(){
   const [status, setStatus] = React.useState('');
 
 return (
+  <div className="container">
+      <div className="row align-items-start">
+        {/* Left-side image */}
+        <div className="col-md-4 text-center"> {/* Center the image horizontally */}
+          <h1 className="createTitle">Start banking today!</h1>
+          <img src="createaccount.png" className="createAccount left-image" alt="create account" />
+        </div>
     <div className="d-flex justify-content-center align-items-center">
       <Card
+      bgcolor="light"
         txtcolor="black"
         header="Create Your Account"
         status={status}
@@ -14,6 +22,8 @@ return (
         headerClass="bg-black"
         className="card-border"
       />
+    </div>
+    </div>
     </div>
   );
 }

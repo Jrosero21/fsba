@@ -10,6 +10,7 @@ function Home() {
         <div className="col-md-8">
           <div className="content">
             <Card
+            bgcolor="light"
               txtcolor="black"
               header="BadBank Credit Union"  // This header will be centered
               title="Welcome to the bank"
