@@ -1,4 +1,4 @@
-import { auth, provider, signInWithPopup } from "./firebase-auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
 
 function Login(){
   const [show, setShow]     = React.useState(true);
@@ -53,19 +53,19 @@ function LoginForm(props) {
   }
 
   function handleGoogleSignIn() {
-    // Implement Google Sign-In logic here using Firebase
-    const auth = getAuth();
+    const auth = getAuth(); // Assuming Firebase has already been initialized
     const provider = new GoogleAuthProvider();
+  
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
-        setUser({ email: user.email }); // Set user in context
+        setUser({ email: user.email }); // Store user data in your context or state
         props.setShow(false);
-        props.setStatus('');
+        props.setStatus('Login successful');
       })
       .catch((error) => {
         console.log('Google Sign-In Error:', error);
-        props.setStatus('Google Sign-In failed');
+        props.setStatus('Google Sign-In failed: ' + error.message);
       });
   }
 
