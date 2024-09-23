@@ -35,6 +35,10 @@ html, body {
   flex: 1; /* Make the content area grow to fill space between header and footer */
 }
 
+.col-md-4 {
+  padding-top: 150px;
+  padding-right: 100px;
+}
 /* CARD */
 .btn {
   background: blueviolet;
