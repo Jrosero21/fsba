@@ -1,8 +1,6 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
-
-function Login(){
-  const [show, setShow]     = React.useState(true);
-  const [status, setStatus] = React.useState('');    
+function Login() {
+  const [show, setShow] = React.useState(true);
+  const [status, setStatus] = React.useState('');
 
   return (
     <div className="container">
@@ -11,37 +9,76 @@ function Login(){
         <div className="col-md-4 text-center"> {/* Center the image horizontally */}
           <h1 className="createTitle">Welcome back!</h1>
         </div>
-    <div className="d-flex justify-content-center align-items-center">
-    <Card
-      bgcolor="light"
-      txtcolor="black"
-      header="Login"
-      status={status}
-      body={show ? 
-        <LoginForm setShow={setShow} setStatus={setStatus}/> :
-        <LoginMsg setShow={setShow} setStatus={setStatus}/>}
-    />
+        <div className="d-flex justify-content-center align-items-center">
+          <Card
+            bgcolor="light"
+            txtcolor="black"
+            header="Login"
+            status={status}
+            body={show ? 
+              <LoginForm setShow={setShow} setStatus={setStatus} /> : 
+              <LoginMsg setShow={setShow} setStatus={setStatus} />}
+          />
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-  ) 
+  )
 }
 
-function LoginMsg(props){
-  return(<>
-    <h5>Success</h5>
-    <button type="submit" 
-      className="btn btn-light" 
-      onClick={() => props.setShow(true)}>
+function LoginMsg(props) {
+  return (
+    <>
+      <h5>Success</h5>
+      <button type="submit"
+        className="btn btn-light"
+        onClick={() => props.setShow(true)}>
         Authenticate again
-    </button>
-  </>);
+      </button>
+    </>
+  );
 }
 
 function LoginForm(props) {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const { setUser } = React.useContext(UserContext);
+
+  React.useEffect(() => {
+    // Load the Google Identity Services script dynamically
+    const initializeGoogleSignIn = () => {
+      google.accounts.id.initialize({
+        client_id: '1051340692593-4gb4ct59vibm12akm8stdt72o6eqlhoo',
+        callback: handleCredentialResponse,
+      });
+      google.accounts.id.renderButton(
+        document.getElementById('google-login-button'), // Add the Google button dynamically
+        { theme: 'outline', size: 'large' }
+      );
+      google.accounts.id.prompt(); // Optionally prompt the sign-in button to appear immediately
+    };
+
+    // Add Google Identity Services script dynamically
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
+    script.defer = true;
+    script.onload = initializeGoogleSignIn; // Initialize Google Sign-In when the script loads
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // Clean up the script on component unmount
+    };
+  }, []);
+
+  function handleCredentialResponse(response) {
+    const token = response.credential;
+    console.log('Google OAuth Token:', token);
+
+    // You can now use this token to authenticate the user
+    setUser({ email: 'google_user_email@example.com', token });  // Example usage, replace with actual data
+    props.setStatus('Successfully signed in with Google!');
+    props.setShow(false);
+  }
 
   function handleLogin() {
     fetch(`/account/login/${email}/${password}`)
@@ -57,23 +94,6 @@ function LoginForm(props) {
           props.setStatus(text);
           console.log('err:', text);
         }
-      });
-  }
-
-  function handleGoogleSignIn() {
-    const auth = getAuth(); // Assuming Firebase has already been initialized
-    const provider = new GoogleAuthProvider();
-  
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        setUser({ email: user.email }); // Store user data in your context or state
-        props.setShow(false);
-        props.setStatus('Login successful');
-      })
-      .catch((error) => {
-        console.log('Google Sign-In Error:', error);
-        props.setStatus('Google Sign-In failed: ' + error.message);
       });
   }
 
@@ -95,8 +115,12 @@ function LoginForm(props) {
 
       <div className="d-flex button-container">
         <button type="submit" className="btn" onClick={handleLogin}>Login</button>
-        <button type="button" className="btn btn-google" onClick={handleGoogleSignIn}>Google Sign in</button>
       </div>
+
+      {/* Google Sign-In Button */}
+      <div id="google-login-button"></div>
     </>
   );
 }
+
+export default Login;
