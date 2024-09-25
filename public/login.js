@@ -5,6 +5,12 @@ function Login(){
   const [status, setStatus] = React.useState('');    
 
   return (
+    <div className="container">
+      <div className="row align-items-start">
+        {/* Left-side image */}
+        <div className="col-md-4 text-center"> {/* Center the image horizontally */}
+          <h1 className="createTitle">Welcome back!</h1>
+        </div>
     <div className="d-flex justify-content-center align-items-center">
     <Card
       bgcolor="light"
@@ -15,6 +21,8 @@ function Login(){
         <LoginForm setShow={setShow} setStatus={setStatus}/> :
         <LoginMsg setShow={setShow} setStatus={setStatus}/>}
     />
+    </div>
+    </div>
     </div>
   ) 
 }

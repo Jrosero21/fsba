@@ -57,7 +57,8 @@ function Transactions() {
   
     return (
       <Card
-        bgcolor="primary"
+        bgcolor="light"
+        txtcolor="black"
         header="Transactions"
         status={status}
         body={show ? (

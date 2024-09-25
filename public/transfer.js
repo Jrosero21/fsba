@@ -56,7 +56,8 @@ function Transfer() {
 
   return (
     <Card
-      bgcolor="primary"
+      bgcolor="light"
+      txtcolor="black"
       header="Transfer Funds"
       status={status}
       body={
